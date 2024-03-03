@@ -1,12 +1,15 @@
-include <iostream>
-include <stdlib>
+#include <iostream>
+#include <cstdlib>
 int main()
 {
-int massive [4]={};
-for ( int i=1; i<4; i++)    
+int size;
+std::cout << "Enter the size of arrray";
+std::cin >> size;
+int array [size]={};
+for ( int i=1; i<=size; i++)    
     {
-massive[i] = rand() % 40; 
-std::cout << massive [i]; 
+array[i] = rand() % 9; 
+std::cout << array [i]; 
     }
 return 0;
  }

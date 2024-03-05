@@ -4,10 +4,7 @@
 using namespace std;
 int main()
 {
-    float a;
-    float b;
-    float c;
-    float g;
+    float a,b,c,g;
     cout << "Enter the a,b,c";
     cin >> a;
     cin >> b;

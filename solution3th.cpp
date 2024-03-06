@@ -1,4 +1,3 @@
-//Задача: Найти длину окружности, используя радиус//
 #include <iostream>
 using namespace std;
 

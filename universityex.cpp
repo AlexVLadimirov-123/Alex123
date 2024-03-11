@@ -1,12 +1,13 @@
+//функция для универа//
 
 #include <iostream>
 #include <math.h>
-  using namespace std;
+using namespace std;
 
 int
 main () 
  { 
-int x, y;
+double x, y;
   
 float f;
   
@@ -16,7 +17,7 @@ cout << " Enter the x, y";
   
 cin >> x >> y;
   
-if (x + y > 0, x > y ^ 2)
+if (x + y > 0 && x > pow (y, 2))
 	
 	{
 	  
@@ -29,7 +30,7 @@ cout << f;
   else
   
 if 
-(x + y <= 0, x = y ^ 2)
+(x + y <= 0 || x == pow (y, 2))
 	
 	{
 	  

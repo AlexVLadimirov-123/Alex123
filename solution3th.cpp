@@ -1,11 +1,8 @@
-#include <sstream>
 #include <iostream>
-#include <vector>
-#include <string>
 using namespace std;
 
 int *
-gh (int a, int b, int c) 
+gh (char a, char b, char c) 
  { 
 int *arr = new int[3];
   
@@ -31,8 +28,7 @@ return arr;
 int 
 main () 
  { 
-int a, b, c;
-  
+char a, b, c;
 cout << "Enter the a,b,c";
   
 scanf ("%d, %d, %d", &a, &b, &c);

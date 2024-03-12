@@ -42,22 +42,3 @@ int *arr = gh (a, b, c);
 return 0;
 
 }
-
- 
-int 
-main () 
- { 
-int a, b, c;
-  
-cout << "Enter the a,b,c";
-  
-cin >> a >> b >> c;
-  
-scanf ("%d, %d, %d", &a, &b, &c);
-  
-int *arr = gh (a, b, c);
-  
- 
-return 0;
-
-}

@@ -8,7 +8,7 @@ vector < int >
 StringOfnumbers (const string & input)
 {
   
-vector < int >numbers;
+vector < int > numbers;
   
 stringstream ss (input);
   
@@ -32,8 +32,7 @@ return numbers;
 
 
  
-int
-main ()
+int main ()
 {
   
 string inputString;
@@ -42,7 +41,7 @@ cout << "Enter the a, b, c";
   
 getline (cin, inputString);
   
-vector < int >result = StringOfnumbers (inputString);
+vector < int > result = StringOfnumbers (inputString);
   
 return 0;
 

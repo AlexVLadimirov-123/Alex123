@@ -4,8 +4,7 @@
 #include <vector>
 using namespace std;
 
-vector < int >
-StringOfnumbers (const string & input)
+vector < int > StringOfnumbers (const string & input)
 {
   
 vector < int > numbers;

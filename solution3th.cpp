@@ -1,38 +1,49 @@
-#include <string>
-#include <vector>
-#include <sstream>
 #include <iostream>
+#include <string>
+#include <sstream>
+#include <vector>
 using namespace std;
-int*gh(char a, char b, char c)
+
+vector < int >
+StringOfnumbers (const string & input)
 {
-int *arr = new int[3];
-arr[0] = a;
-arr[1] = b;
-arr[2] = c;
-for (int i = 0; i < 3; i++)
-	{  
-cout << arr[i] << endl;
+  
+vector < int >numbers;
+  
+stringstream ss (input);
+  
+string token;
+  
+ 
+while (getline (ss, token, ','))
+	{
+	  
+int num = stoi (token);
+	  
+cout << num << endl;
+	  
+numbers.push_back (num);
+	
 } 
-return arr;
+ 
+return numbers;
+
 }
-int 
-main () 
- { 
-     char a,b,c;
-     string str;
-     cout << "enter the a, b, c";
-     cin >> str;
 
-stringstream test("a, b, c");
-string segment;
-vector<string> seglist;
 
-while(getline(test, segment, ','))
+ 
+int
+main ()
 {
-   seglist.push_back(segment);
-}
-
-int *arr = gh (a, b, c);
+  
+string inputString;
+  
+cout << "Enter the a, b, c";
+  
+getline (cin, inputString);
+  
+vector < int >result = StringOfnumbers (inputString);
+  
 return 0;
 
 }

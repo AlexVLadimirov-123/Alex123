@@ -1,51 +1,42 @@
-//функция для универа//
-
+//
 #include <iostream>
+#include <cmath>
 #include <math.h>
 using namespace std;
 
 int
 main () 
  { 
-double x, y;
+int a, b, r, x, y;
   
-float f;
-  
-float e = 2.7;
-  
-cout << " Enter the x, y";
+cout << "Enter the x, y";
   
 cin >> x >> y;
   
-if (x + y > 0 && x > pow (y, 2))
+cout << "Enter the geometry size of rectangle (a (heght) and b (vidth))";
+  
+cin >> a >> b;
+  
+cout << "Enter the radius of circle";
+  
+cin >> r;
+  
+if (r < abs (x) < (a / 2) && r < abs (y) < (b / 2))
 	
 	{
 	  
-f = exp (x + y);
-	  
-cout << f;
-	
-}
-  
-  else
-  
-if 
-(x + y <= 0 || x == pow (y, 2))
-	
-	{
-	  
-f = exp (-x - y);
-	  
-cout << f;
+cout << "The point is locate inside specified aria";
 	
 }
   
   else
 	
-f = exp (x - y);
-  
-cout << f;
+	{
+	  
+cout << "The point is locate outside cpecified aria";
+	}
   
 return 0;
 
 }
+

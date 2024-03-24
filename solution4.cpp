@@ -4,8 +4,44 @@
 #include <algorithm>
 using namespace std;
 
-int
-SearchNumbers (const vector < int >arr, int a)
+vector < int >
+StringOfNumbers (const string & input) 
+ { 
+ 
+vector < int >numbers;
+  
+ 
+stringstream ss (input);
+  
+ 
+string token;
+  
+ 
+ 
+while (getline (ss, token, ','))
+	
+	{
+	  
+ 
+int num = stoi (token);
+	  
+ 
+cout << num << endl;
+	  
+ 
+numbers.push_back (num);
+	
+ 
+} 
+ 
+return numbers;
+
+ 
+}
+
+
+ 
+int SearchNumbers (const vector < int >&arr, int a)
 {
   
 int l = 0;
@@ -15,25 +51,25 @@ int r = arr.size () - 1;
 while (l <= r)
 	{
 	  
-int middle = l + (r - l) / 2;
+int mid = l + (r - l) / 2;
 	  
-if (arr[middle] == a)
+if (arr[mid] == a)
 		{
 		  
-return middle;
+return mid;
 		
 }
 	  
-if (arr[middle] < a)
+if (arr[mid] < a)
 		{
 		  
-l = middle + 1;
+l = mid + 1;
 		
 }
 	  else
 		{
 		  
-r = middle - 1;
+r = mid - 1;
 		
 }
 	
@@ -45,46 +81,31 @@ return -1;
 
 
  
+ 
+ 
 int
 main ()
 {
   
 int n;
   
- 
 cout << "Enter the size";
   
 cin >> n;
   
- 
-vector < int >arr;
-  
-string input;
+vector < int >inputArray;
   
 cout << "Elements:";
   
-cin.ignore ();
-  
-getline (cin, input);
-  
- 
-stringstream ss (input);
-  
 int num;
   
-while (ss >> num)
-	{
-	  
-arr.push_back (num);
-	  
-if (ss.peek () == ',')
-		
-ss.ignore ();
-	
-}
+std::string input;
   
- 
-sort (arr.begin (), arr.end ());
+std::cin.ignore ();
+  
+std::getline (std::cin, input);
+  
+inputArray = StringOfNumbers (input);
   
  
 int a;
@@ -93,8 +114,7 @@ cout << "Enter the number value";
   
 cin >> a;
   
- 
-int index = SearchNumbers (arr, a);
+int index = SearchNumbers (inputArray, a);
   
 if (index != -1)
 	{
@@ -113,3 +133,9 @@ cout << "Error" << endl;
 return 0;
 
 }
+
+
+ 
+ 
+ 
+ 

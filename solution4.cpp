@@ -1,75 +1,72 @@
 #include <iostream>
 #include <vector>
+#include <string>
 #include <sstream>
 #include <algorithm>
 using namespace std;
 
 vector < int >
-StringOfNumbers (const string & input) 
- { 
- 
+StringOfNumbers (const string & input)
+{
+  
 vector < int >numbers;
   
- 
 stringstream ss (input);
   
- 
 string token;
   
  
+if (input.find (',') == string::npos)
+{
+	  
+cout << "No comma?" << endl;
+	  
+return numbers;
+	
+}
  
 while (getline (ss, token, ','))
-	
 	{
 	  
- 
 int num = stoi (token);
 	  
- 
-cout << num << endl;
-	  
- 
 numbers.push_back (num);
 	
- 
 } 
  
 return numbers;
 
- 
 }
 
-
- 
-int SearchNumbers (const vector < int >&arr, int a)
+int
+binarySearch (const vector < int >&arr, int target)
 {
   
-int l = 0;
+int left = 0;
   
-int r = arr.size () - 1;
+int right = arr.size () - 1;
   
-while (l <= r)
-	{
+while (left <= right)
+{
 	  
-int mid = l + (r - l) / 2;
+int mid = left + (right - left) / 2;
 	  
-if (arr[mid] == a)
+if (arr[mid] == target)
 		{
 		  
 return mid;
 		
 }
-	  
-if (arr[mid] < a)
+	  else if (arr[mid] < target)
 		{
 		  
-l = mid + 1;
+left = mid + 1;
 		
 }
-	  else
+else
 		{
 		  
-r = mid - 1;
+right = mid - 1;
 		
 }
 	
@@ -81,61 +78,54 @@ return -1;
 
 
  
- 
- 
 int
 main ()
 {
   
-int n;
+string input;
   
-cout << "Enter the size";
+cout << "Elements: ";
   
-cin >> n;
-  
-vector < int >inputArray;
-  
-cout << "Elements:";
-  
-int num;
-  
-std::string input;
-  
-std::cin.ignore ();
-  
-std::getline (std::cin, input);
-  
-inputArray = StringOfNumbers (input);
+getline (cin, input);
   
  
-int a;
+vector < int >numbers = StringOfNumbers (input);
   
-cout << "Enter the number value";
+ 
+if (numbers.empty ())
+	{
+	  
+return 1;
+	
+}
   
-cin >> a;
+sort (numbers.begin (), numbers.end ());
+   
+int target;
   
-int index = SearchNumbers (inputArray, a);
+cout << "Enter the number value: ";
+  
+cin >> target;
+  
+ 
+int index = binarySearch (numbers, target);
   
 if (index != -1)
 	{
 	  
-cout << index << endl;
+cout << "Index of element " << index << endl;
 	
 }
   else
 	{
 	  
-cout << "Error" << endl;
+cout << "Element " << target << " wasn't found" << endl;
 	
-}
-  
+}  
  
 return 0;
 
 }
 
-
- 
- 
  
  
